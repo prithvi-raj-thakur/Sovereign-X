@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import { MorphSVGPlugin } from "gsap-trial/MorphSVGPlugin";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 // ─── BentoGrid card background = #050a0f ────────────────────────────────────
 const CARD_BG = "#050a0f";

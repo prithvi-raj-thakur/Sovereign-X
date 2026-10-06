@@ -664,8 +664,21 @@ function Topbar({ onToggleSidebar, sidebarCollapsed }: { onToggleSidebar: () => 
 
       {/* Desktop Stats */}
       <div className="hidden md:flex items-center gap-1.5">
+        <div
+          className="relative overflow-hidden flex items-center gap-3 px-3 py-2.5 rounded-xl text-[14px] font-medium text-white/90 hover:text-white transition-all duration-200 group"
+          style={{
+            background: wanKbs === 0 ? "#10B981" : "#F59E0B",
+            boxShadow: `0 8px 32px -8px ${wanKbs === 0 ? "rgba(16, 185, 129, 0.4)" : "rgba(245, 158, 11, 0.4)"}, inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 -4px 20px -4px rgba(0,0,0,0.2)`,
+            backdropFilter: "blur(24px)",
+            fontFamily: SF
+          }}
+        >
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-[1px] bg-gradient-to-r from-transparent via-white to-transparent opacity-50 pointer-events-none" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40%] h-[3px] bg-white blur-sm opacity-30 pointer-events-none" />
+          <Network className="relative z-10 w-[18px] h-[18px] text-white" />
+          <span className="relative z-10 whitespace-nowrap">WAN: {wanKbs.toFixed(1)} KB/s</span>
+        </div>
         {[
-          { icon: Network, label: `WAN: ${wanKbs.toFixed(1)} KB/s`, color: wanKbs === 0 ? "#10B981" : "#F59E0B" },
           { icon: Cpu, label: "Ollama", color: ollamaOnline ? "#00A3FF" : "#EF4444" },
           { icon: Activity, label: "VRAM: 4 GB", color: "#00A3FF" },
         ].map(({ icon: Icon, label, color }) => (
@@ -701,8 +714,21 @@ function Topbar({ onToggleSidebar, sidebarCollapsed }: { onToggleSidebar: () => 
 
         {statsOpen && (
           <div className="absolute top-full right-0 mt-3 p-2 rounded-xl bg-black/90 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1),0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl border border-white/5 min-w-[150px] flex flex-col gap-1.5 z-50">
+            <div
+              className="relative overflow-hidden flex items-center gap-3 px-3 py-2.5 rounded-xl text-[14px] font-medium text-white/90 hover:text-white transition-all duration-200 group"
+              style={{
+                background: wanKbs === 0 ? "#10B981" : "#F59E0B",
+                boxShadow: `0 8px 32px -8px ${wanKbs === 0 ? "rgba(16, 185, 129, 0.4)" : "rgba(245, 158, 11, 0.4)"}, inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 -4px 20px -4px rgba(0,0,0,0.2)`,
+                backdropFilter: "blur(24px)",
+                fontFamily: SF
+              }}
+            >
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-[1px] bg-gradient-to-r from-transparent via-white to-transparent opacity-50 pointer-events-none" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40%] h-[3px] bg-white blur-sm opacity-30 pointer-events-none" />
+              <Network className="relative z-10 w-[18px] h-[18px] text-white" />
+              <span className="relative z-10 whitespace-nowrap">WAN: {wanKbs.toFixed(1)} KB/s</span>
+            </div>
             {[
-              { icon: Network, label: `WAN: ${wanKbs.toFixed(1)} KB/s`, color: wanKbs === 0 ? "#10B981" : "#F59E0B" },
               { icon: Cpu, label: "Ollama", color: ollamaOnline ? "#00A3FF" : "#EF4444" },
               { icon: Activity, label: "VRAM: 4 GB", color: "#00A3FF" },
             ].map(({ icon: Icon, label, color }) => (

@@ -65,6 +65,7 @@ export default function PageLoader({ onDone }: PageLoaderProps) {
   return (
     <div
       ref={curtainRef}
+      suppressHydrationWarning
       style={{
         position: "fixed",
         inset: 0,
@@ -82,6 +83,7 @@ export default function PageLoader({ onDone }: PageLoaderProps) {
       {/* Wordmark */}
       <p
         ref={wordmarkRef}
+        suppressHydrationWarning
         style={{
           fontSize: "0.68rem",
           letterSpacing: "0.32em",
@@ -97,6 +99,7 @@ export default function PageLoader({ onDone }: PageLoaderProps) {
       {/* Percentage — white/60, decent size */}
       <p
         ref={pctRef}
+        suppressHydrationWarning
         style={{
           fontSize: "clamp(2.8rem, 6vw, 5rem)",
           fontWeight: 700,
